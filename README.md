@@ -44,6 +44,9 @@ Portfolio/
 
 ---
 
+
+---
+
 ## 💡 Features
 
 - Clean, consistent navigation bar across all pages  
@@ -56,7 +59,7 @@ Portfolio/
 
 ## 🚀 Deployment Instructions
 
-1. Upload all files to your hosting provider (e.g., GitHub Pages, Netlify, or free hosting service).  
+1. Upload all files to your hosting provider (e.g., GitHub Pages, Netlify, or a free hosting service).  
 2. Ensure that all relative paths (e.g., `../style.css` and `/Assets/logo.png`) are correct after deployment.  
 3. Verify that linked pages and external resources (like fonts or icons) load correctly.  
 
@@ -66,5 +69,17 @@ Portfolio/
 
 **Deondre Williams**  
 Web Designer & Developer  
+
 📧 [codetechwilli@gmail.com](mailto:codetechwilli@gmail.com)  
 🌐 [Upwork Profile](https://www.upwork.com/freelancers/~011760db4b1d47ad9f)  
+
+### 🔗 Connect with Me
+- 🎵 [TikTok](https://www.tiktok.com/@freelancer_lyfe_d)  
+- 📸 [Instagram](https://www.instagram.com/freelancer_lyfe/)  
+- 📘 [Facebook](https://www.facebook.com/profile.php?id=100070144576891)  
+- 🕊️ [X (Twitter)](https://x.com/onlineguruspeci)  
+- 💬 [WhatsApp](https://wa.me/18768188496)
+
+---
+
+© 2025 **Deondre Williams**. All rights reserved.

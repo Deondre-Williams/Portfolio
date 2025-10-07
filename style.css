@@ -1,0 +1,957 @@
+/*
+Name:Deondre Williams
+ID#: 2307492
+
+*/
+:root {
+  /* Color Scheme & Fonts */
+  --bg-color: #1a1a1d;        
+  --card-bg: #242429;         
+  --heading-color: #f5f5f5;   
+  --text-color: #d9d9d9;      
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  --primary-color: #ff8a9b;   
+  --secondary-color: #64d4c5; 
+  --accent-color: #ffd36b;    
+  
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+}
+/***********************************************************************
+                            Global Styles
+***********************************************************************/
+*{/* base reset and safe sizing */
+    margin: 0;
+    padding: 0;
+}
+body {/* body styling with background image */
+  font-family: var(--font-primary);
+  background: var(--bg-color) url(./Assets/bg-5.jpg) no-repeat center center / cover;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+header {/* header styling */
+  background-color: var(--card-bg);
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;/* Header stick to top */
+  z-index: 1000;/* keep header on top */
+}
+img{/* Make all images responsive by default */
+    max-width: 100%;
+    height:auto;
+    display: block;
+}
+strong{/* strong tag styling used to highlight first introductory word */
+    font-size: 32px;
+    font-family: "Lavishly Yours", cursive;
+     font-weight: 400;
+    font-style: normal;
+}
+ h1, p, ul{/* styling for paragraph text */
+  color:var(--card-bg);
+    font-family: var(--primary-font);
+}
+.nav-flex-container .logo img{/* logo image styling */
+border-radius: 10px;
+width: 3.125rem;
+box-shadow: 10px 10px 8px var(--secondary-color) ; 
+}
+nav > div.logo{/* logo container styling */
+    margin-right: 19.375rem;
+}
+.nav-flex-container {/* navigation flexbox container */
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20px;    
+  gap: 20px;
+}
+.nav-flex-container a {/* navigation link styling */
+  display: block;
+  padding: 8px 20px;
+  font-size: 20px;
+  text-decoration: none;
+   
+  color: var(--secondary-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.nav-flex-container a:not(.logo-link):hover{/* navigation hover effect  excluding the logo*/
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(255, 211, 107, 0.15);
+}
+footer >p{/* footer paragraph styling */
+    font-size: 16px;
+    padding: 10px;
+  color: var(--secondary-color);
+}
+footer{/* footer styling */
+    display:flex;
+    justify-content: center;
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+ }
+ @media (max-width: 600px) {/* Mobile 600px and below */
+
+  header {/* header adjustments for mobile */
+    position: static;
+    top: unset;
+    z-index: unset;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/**********************************************************************************************************************************
+                                                                      HOME PAGE
+    **********************************************************************************************************************************/
+.flex-wrapper{/* home page flexbox wrapper */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+.main-grid-container{/* main grid container for home page */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    padding: 20px; 
+    ;
+ }
+ .main-grid-container > p{/* paragraph styling within main grid container */
+text-align: center;
+padding-top:40px;
+font-size: 18px;
+ }
+ div > a .home-img{/* profile image styling and hover effect */
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-radius: 50%;
+    width: 250px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+ }
+ div > a .home-img:hover{/* profile image hover effect */
+    cursor: pointer;
+    transform:scale(1.12);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+ }
+ 
+/* =============================================================================================================================
+                                                      Tablet / Small  and Desktop 950px and below
+============================================================================================================================== */
+@media (max-width: 950px) {
+
+  .nav-flex-container {/* Adjust header nav */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  nav > div.logo {/* logo container adjustment */
+    margin-right: 0; /* remove large margin */
+  }
+
+  .nav-flex-container a {/* navigation link adjustments */
+    font-size: clamp(0.875rem, 1rem, 1.125rem );
+    padding: 6px 15px;
+  }
+
+  
+  .main-grid-container {/* stack everything vertically for the main */
+    grid-template-columns: 1fr; 
+    max-width: 90%;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .flex-wrapper {/* center content vertically and horizontally */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-container {/* image container adjustments */
+    margin-top: 20px;
+  }
+
+  .home-img {/* profile image adjustments */
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  p {/* paragraph adjustments */
+    font-size: clamp(0.875rem, 1rem, 1rem);
+    padding-top: 20px;
+  }
+}
+
+/* ===================================================================================================================================
+                                                                Mobile 600px and below
+    ====================================================================================================================================== */
+@media (max-width: 600px) {
+
+  header {/* header adjustments for mobile */
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-flex-container {/* Stack nav links vertically */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-flex-container a {/* navigation link adjustments for mobile */
+    font-size: clamp(0.5rem, 0.75rem, 0.875rem);
+    padding: 5px 10px;
+  }
+
+  .main-grid-container {/* stack everything vertically  for the main*/
+    grid-template-columns: 1fr; 
+    max-width: 95%;
+    gap: 30px;
+  }
+
+  .home-img {/* profile image adjustments for mobile */
+    width: 150px;
+  }
+
+  p {/* paragraph adjustments for mobile */
+    font-size: clamp(0.75rem, 0.875rem, 0.875rem);
+    padding-top: 15px;
+  }
+
+  strong {/* strong tag adjustments for mobile */
+    font-size: clamp(0.875rem, 1rem, 1.5rem );
+  }
+}
+
+ /***********************************************************************************************************************
+                                                                     Contact PAGE
+ ***********************************************************************************************************************/
+ .contact-flex-wrapper{/* contact page flexbox wrapper */
+min-height:50vh;
+display:flex;
+align-items: center;
+justify-content: center;
+ }
+ .contact-1st-grid-container{/* contact page grid container */
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    gap:20px;
+    padding:60px;
+ }
+ .contact-1st-grid-container >div > a >h1{/* contact page heading styling */
+    font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  border-radius: 10px;
+  width:400px;
+  height:auto;
+  text-align: center;
+ }
+ .contact-1st-grid-container >div > a {/* contact page link styling */
+    text-decoration: none;
+ }
+
+ .contact-1st-grid-container >div > a >h1:hover{/* contact page heading hover effect */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--primary-color);
+ }
+
+.icon-container{/* icon container grid styling */
+display: grid;
+padding:100px;
+grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }  
+  section >  a > i:hover{/* icon hover effect */
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform: rotate(20deg);
+    
+  }
+section >  a > i{/* icon styling */
+    font-size:4rem;
+    padding-left:45px;
+    transition: transform 0.3s ease;
+    
+}
+.contact-footer{/* contact page footer styling */
+    padding-top: 75px;
+}
+/* ====================================================================================================================
+                             Tablet / Small and Desktop  950px and below
+========================================================================================================== */
+@media (max-width: 950px) {
+
+  .contact-1st-grid-container {/* stack content vertically */
+    grid-template-rows: 1fr; 
+    padding: 40px;
+    gap: 15px;
+  }
+
+  .contact-1st-grid-container > div > a > h1 {/* heading adjustments */
+    font-size: clamp(3.125rem, 3.75rem, 4.375rem);
+    width: 300px;
+  }
+
+  .icon-container {/* icon container adjustments */
+    padding: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+
+  section > a > i {/* icon size adjustments */
+    font-size: clamp(1.5rem, 2.5rem, 3rem);
+    padding-left: 20px;
+  }
+}
+
+/* ==================================================================================================
+                                                Mobile 600px and below
+  =================================================================================================== */
+@media (max-width: 600px) {
+
+  .contact-flex-wrapper {/* center content vertically and horizontally */
+    padding: 20px;
+  }
+
+  .contact-1st-grid-container {/* stack content vertically */
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .contact-1st-grid-container > div > a > h1 {/* heading adjustments */
+    font-size: clamp(2.5rem, 2.813rem, 3.125rem,);
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .icon-container {/* icon container adjustments */
+    padding: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  }
+
+  section > a > i {/* icon size adjustments */
+    font-size: clamp(0.875rem, 1rem, 2.5rem);
+    padding-left: 10px;
+  }
+
+  .contact-footer {/* footer adjustments */
+    padding-top: 40px;
+    text-align: center;
+  }
+}
+
+/*******************************************************************************************************
+                                                Resume
+  *******************************************************************************************************/
+
+.resume {/* resume page main container */
+  padding: 60px 20px;
+  font-family: var(--primary-font);
+}
+
+.resume-container {/* resume grid container */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================ Sidebar ============================ */
+.resume-sidebar {/* sidebar styling */
+  background: var(--secondary-color);
+  border-radius: 16px;
+  padding: 20px;
+  
+}
+
+.resume-sidebar h3 {/* sidebar heading styling */ 
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--bg-color);
+}
+
+.resume-sidebar p {/* sidebar paragraph styling */
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: var(--bg-color);
+}
+
+.skills {/* skills section styling */
+  margin-top: 20px;
+}
+
+.badge {/* skill badge styling */
+  display: inline-block;
+  background:var(--text-color);
+  font-family: var(--font-primary);
+  color: var(--bg-color);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  margin: 5px 5px 0 0;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {/* skill badge hover effect */
+  background: var(--bg-color);
+  color: var(--accent-color);
+}
+
+/* ================================== Main Resume Content ============================ */
+.resume-main h3 {/* main section headings styling */
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  color:var(--card-bg);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 5px;
+}
+
+.job-card {/* job card styling */
+  background: var(--secondary-color);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {/* job card hover effect */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.job-card h4 {/* job title styling */
+  font-family: var(--font-secondary);
+  margin: 0;
+  font-size: 1.2rem;
+  color:var(--bg-color);
+}
+.job-card p{/* job description styling */
+    color:var(--bg-color);
+    font-family: var(--font-primary);
+}
+
+.job-card .date {/* job date styling */
+  font-size: 0.9rem;
+  color: var(--bg-color);
+  margin: 5px 0 10px 0;
+}
+
+.education {/* education section styling */
+  margin-top: 40px;
+}
+/* ============================================================================================================
+                              Tablet / Small Desktop 900px and below
+============================================================================================================ */
+@media (max-width: 950px) {
+
+  .resume-container {/* stack sidebar and main content vertically */
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .resume-sidebar {/* sidebar adjustments */
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .resume-sidebar h3 {/* sidebar heading adjustments */
+    font-size: 1rem;
+  }
+
+  .resume-sidebar p {/* sidebar paragraph adjustments */
+    font-size: 0.9rem;
+  }
+
+  .badge {
+    font-size: 0.8rem;/* skill badge size adjustments */
+    padding: 5px 10px;
+  }
+
+  .resume-main h3 {/* main section heading adjustments */
+    font-size: 1.3rem;
+  }
+
+  .job-card {/* job card adjustments */
+    padding: 15px;
+  }
+
+  .job-card h4 {/* job title adjustments */
+    font-size: 1.1rem;
+  }
+
+  .job-card p,
+  .job-card .date {/* job description and date adjustments */
+    font-size: 0.9rem;
+  }
+}
+
+/* =================================================================================================================
+                        Mobile 600px and below
+===================================================================================================================== */
+@media (max-width: 600px) {
+
+  
+  .resume-container {/* stack sidebar and main content vertically */
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resume-sidebar {/* sidebar adjustments */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .resume-sidebar h3 {/* sidebar heading adjustments */
+    font-size: clamp(0.875rem, 0.95rem, 1rem);
+  }
+
+  .resume-sidebar p {/* sidebar paragraph adjustments */
+    font-size: clamp(0.813rem, 0.85rem, 0.875rem);
+  }
+
+  .badge {/* skill badge size adjustments */
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .resume-main h3 {/* main section heading adjustments */
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .job-card {/* job card adjustments */
+    padding: 12px;
+  }
+
+  .job-card h4 {/* job title adjustments */
+    font-size: 1rem;
+  }
+
+  .job-card p,
+  .job-card .date {/* job description and date adjustments */
+    font-size: 0.85rem;
+  }
+
+  .education {/* education section adjustments */
+    margin-top: 30px;
+  }
+}
+/***************************************************************************************************************
+                                  ABOUT PAGE
+********************************************************************************************************************/
+.h2-card, h3{/* Heading Cards */
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  color: var(--heading-color);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.h2-card:hover {/* Heading Card Hover Effect */
+  transform: scale(1.05);
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+.p-card {/* Paragraph Cards */
+  background: var(--heading-color);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.p-card > h4{/* Paragraph Card Subheadings */
+  color:var(--accent-color)
+}
+.p-card:hover {/* Paragraph Card Hover Effect */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.personality-grid-container {/* Personality Grid Container */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.personality-grid-container ul {/* Personality List */
+  list-style-type: square;
+  padding-left: 1.5rem;
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.personality-grid-container li {/* Personality List Items */
+  margin: 0.5rem 0;
+}
+
+
+.vision-grid-container,
+.mission-grid-container,
+.personality-grid-container,
+.hero-grid-container {/* Section Grid Containers */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
+}
+.idea{/* Idea Cards */
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.idea:hover{/* Idea Card Hover Effect */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* =================================================================================================================================
+                                           Tablet / Small Desktop 950px and below
+========================================================================================================================================= */
+@media (max-width: 950px) {
+
+  .vision-grid-container,
+  .mission-grid-container,
+  .personality-grid-container,
+  .hero-grid-container {/* stack content vertically */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .h2-card,
+  h3 {/* Heading adjustments */
+    font-size: 1.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .p-card,
+  .idea {/* Paragraph and Idea Card adjustments */
+    padding: 1rem;
+  }
+
+  .personality-grid-container ul {/* Personality List adjustments */
+    grid-template-columns: 1fr 1fr; /* keep two columns but smaller spacing */
+    gap: 0.5rem;
+  }
+
+  .personality-grid-container li {/* Personality List Item adjustments */
+    margin: 0.4rem 0;
+  }
+}
+
+/* ============================================================================================================================
+   Mobile 600px and below
+============================================================================================================================== */
+@media (max-width: 600px) {
+
+  .vision-grid-container,
+  .mission-grid-container,
+  .personality-grid-container,
+  .hero-grid-container {
+    grid-template-columns: 1fr; /* stack content vertically */
+    gap: 1rem;
+  }
+
+  .h2-card,
+  h3 {/* Heading adjustments */
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .p-card,
+  .idea {/* Paragraph and Idea Card adjustments */
+    padding: 0.8rem;
+  }
+
+  .personality-grid-container ul {/* Personality List adjustments */
+    grid-template-columns: 1fr; /* stack list items on mobile */
+    gap: 0.3rem;
+  }
+
+  .personality-grid-container li {/* Personality List Item adjustments */
+    margin: 0.3rem 0;
+  }
+  
+  .footer {/* Footer adjustments */
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+/*************************************************************************************************************
+                                                                   Project
+ ******************************************************************************************************************/
+
+.project {/* Project page main container */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project h2 {/* Project section headings */
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color:  var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.project div {/* Project grid container */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.project img,
+.project video {/* Project media styling */
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project img:hover,
+.project video:hover {/* Project media hover effect */
+  transform: scale(1.03);
+}
+/* =================================================================================================================================
+                                           Tablet / Small Desktop 950px and below
+========================================================================================================================================= */
+
+@media (max-width: 950px) {
+
+  .nav-flex-container {/* Adjust header nav */
+    justify-content: center;
+  }
+  .nav-flex-container a {/* navigation link adjustments */
+    margin: 0.5rem;
+  }
+}
+/* =================================================================================================================================
+                                           Tablet / Small Desktop 950px and below
+========================================================================================================================================= */
+@media (max-width: 600px) {/* Mobile 600px and below */
+  
+  .project div {/* stack project items vertically */
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-flex-container { /* Navigation stacked for mobile */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .nav-flex-container a {/* navigation link adjustments for mobile */
+    display: block;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* Project section adjustments */
+
+  .project {/* reduce padding for mobile */
+    padding: 1rem;
+  }
+
+  .project h2 {/* heading adjustments */
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .project div {/* stack project items vertically */
+    grid-template-columns: 1fr; 
+    gap: 0.75rem;
+  }
+
+  .project img, 
+  .project video {/* media adjustments */
+    border-radius: 6px;
+    box-shadow: none; /* keep it light on mobile */
+  }
+
+  
+  .project video {/* video specific adjustments */
+    max-height: 250px; /* limit video height for small screens */
+    object-fit: cover;
+  }
+
+  footer {/* footer adjustments */
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+
+
+/*******************************************************************************************************************************
+                                            Twelve Pillar
+***************************************************************************************************************************************/
+.reflection-body{/* Reflection page body styling */
+  font-family: var(--font-primary);
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+  .reflection-main{/* Reflection main content styling */
+background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  max-width: var(--max-width);
+  width: 100%;
+  }
+
+  .reflection-h1{/* Reflection main heading styling */
+    font-family: var(--font-primary);
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  }
+.reflection-h2{/* Reflection subheading styling */
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: var(--heading-color);
+  position: relative;
+}
+.reflection-h2::after{/* Decorative underline for subheadings */
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+.reflection-h3{/* Reflection tertiary heading styling */
+  font-family: var(--font-secondary);
+   font-size: 1.2rem;
+  margin-top: 1.2rem;
+  color: var(--bg-color);
+}
+.reflection-p{/* Reflection paragraph styling */
+  font-family: var(--font-primary);
+  margin-top: 0.8rem;
+  font-size: 1.05rem;
+  text-align: justify;
+  color: var(--text-color);
+}
+
+.reflection-btn{/* Reflection button styling */
+ display: inline-block;
+  margin-top: 2rem;
+  padding: 0.7rem 1.4rem;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.reflection-btn:hover{/* Reflection button hover effect */
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* =============================================================================================================
+                                       Responsive Design 600px
+   ===================================================================================================================== */
+@media (max-width: 600px) {
+  .reflection-body {/* Reflection body adjustments for mobile */
+    padding: 1rem;
+  }
+
+  .reflection-main {/* Reflection main content adjustments for mobile */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: none; 
+  }
+
+  .reflection-h1 {/* Reflection main heading adjustments for mobile */
+    font-size: 1.6rem;
+  }
+
+  .reflection-h2 {/* Reflection subheading adjustments for mobile */
+    font-size: 1.3rem;
+  }
+
+  .reflection-h3 {/* Reflection tertiary heading adjustments for mobile */
+    font-size: 1rem;
+  }
+
+  .reflection-p {/* Reflection paragraph adjustments for mobile */
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .reflection-btn {/* Reflection button adjustments for mobile */
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+/* =============================================================================================================
+                                       Responsive Design 950px
+   ===================================================================================================================== */
+@media (max-width: 950px) {
+  .reflection-body {/* Reflection body adjustments for medium screens */
+    padding: 1.5rem;
+  }
+
+  .reflection-main {/* Reflection main content adjustments for medium screens */
+    padding: 2rem;
+    max-width: 90%; /* widen slightly for medium screens */
+  }
+
+  .reflection-h1 {/* Reflection main heading adjustments for medium screens */
+    font-size: 2rem;
+  }
+
+  .reflection-h2 {/* Reflection subheading adjustments for medium screens */
+    font-size: 1.4rem;
+  }
+
+  .reflection-p {/* Reflection paragraph adjustments for medium screens */
+    font-size: 1rem;
+  }
+}
+
+
